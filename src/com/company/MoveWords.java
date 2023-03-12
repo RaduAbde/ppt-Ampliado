@@ -8,7 +8,7 @@ public class MoveWords{
     public static final int GANA = 1;
     public static final int PIERDE = 2;
 
-    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTIJA","SPOCK"};
+    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "TORITO","SEPIA"};
     private static final String[] validCommands = {"SALIR", "HELP"};
 
     private Random rnd;
@@ -66,28 +66,28 @@ public class MoveWords{
         String tijeras = "TIJERAS";
         String papel = "PAPEL";
         String piedra = "PIEDRA";
-        String lagartija = "LAGARTIJA";
-        String spock = "SPOCK";
+        String torito = "TORITO";
+        String sepia = "SEPIA";
         switch (first){
             case "TIJERAS":
                 if (second.equals(papel)){
                     return GANA;
-                }else if (second.equals(lagartija)){
+                }else if (second.equals(torito)){
                     return GANA;
                 }else if (second.equals(piedra)){
                     return PIERDE;
-                }else if (second.equals(spock)){
+                }else if (second.equals(sepia)){
                     return PIERDE;
                 }else{
                     return EMPATE;
                 }
 
             case "PAPEL":
-                if (second.equals(spock)){
+                if (second.equals(sepia)){
                     return GANA;
                 }else if (second.equals(piedra)){
                     return GANA;
-                }else if (second.equals(lagartija)){
+                }else if (second.equals(torito)){
                     return PIERDE;
                 }else if (second.equals(tijeras)){
                     return PIERDE;
@@ -97,22 +97,22 @@ public class MoveWords{
 
 
             case "PIEDRA":
-                if (second.equals(lagartija)){
+                if (second.equals(torito)){
                     return GANA;
                 }else  if (second.equals(tijeras)){
                     return GANA;
                 }else if (second.equals(papel)){
                     return PIERDE;
-                }else if (second.equals(spock)){
+                }else if (second.equals(sepia)){
                     return PIERDE;
                 }else {
                     return EMPATE;
                 }
 
-            case "LAGARTIJA":
+            case "TORITO":
                 if (second.equals(papel)){
                     return GANA;
-                }else if (second.equals(spock)){
+                }else if (second.equals(sepia)){
                     return GANA;
                 }else if (second.equals(piedra)){
                     return PIERDE;
@@ -122,14 +122,14 @@ public class MoveWords{
                     return EMPATE;
                 }
 
-            case "SPOCK":
+            case "SEPIA":
                 if (second.equals(tijeras)){
                     return GANA;
                 }else if (second.equals(piedra)){
                     return GANA;
                 }else if (second.equals(papel)){
                     return PIERDE;
-                }else if (second.equals(lagartija)){
+                }else if (second.equals(torito)){
                     return PIERDE;
                 }else {
                     return EMPATE;
