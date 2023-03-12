@@ -1,0 +1,46 @@
+@startuml
+class Game [[java:com.company.Game]] {
+	-parser: Parser
+	+Game()
+	-welcome(): void
+	-printHelp(): void
+	-computerMove(): Move
+	-printWinner(who: int): void
+	-printMoves(player: Move, computer: Move): void
+	-processMove(move: Move): boolean
+	+playGame(): void
+	+{static} main(args: String[]): void
+}
+class Move [[java:com.company.Move]] {
+	-move: String
+	+Move()
+	+Move(move: String)
+	+getMove(): String
+	+isUnknown(): boolean
+	+beats(other: Move): int
+}
+class MoveWords [[java:com.company.MoveWords]] {
+	+{static} EMPATE: int
+	+{static} GANA: int
+	+{static} PIERDE: int
+	-{static} validMoves: String[]
+	-{static} validCommands: String[]
+	-rnd: Random
+	+MoveWords()
+	+isValidMoveCommand(value: String): boolean
+	+randomMove(): String
+	+showMoves(): void
+	+showCommands(): void
+	+showWords(): void
+	-{static} getIndex(value: String): int
+	+{static} checkWinner(first: String, second: String): int
+}
+class Parser [[java:com.company.Parser]] {
+	-moves: MoveWords
+	-reader: Scanner
+	+Parser()
+	+showCommands(): void
+	+newRandomMove(): Move
+	+getMove(): Move
+}
+@enduml
